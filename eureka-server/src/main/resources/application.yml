@@ -6,7 +6,7 @@ server:
   port: ${PORT:8761}
 
 eureka:
-  shouldUseDns: false
+#  shouldUseDns: false
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -17,6 +17,7 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     healthcheck:
       enabled: true
+    use-dns-for-fetching-service-urls: false
   server:
     expected-client-Renewal-interval-seconds: 20
   instance:
